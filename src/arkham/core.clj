@@ -15,17 +15,13 @@
   (some (partial = flag) (location :flags)))
 
 (defn- find-locations-by-flag [game flag]
-  (find-locations game #(has-flag? % :clue)))
+  (find-locations game #(has-flag? (second %) flag)))
 
 (defn- location [game id]
-  (first (find-locations game #(= (:id %) id))))
-
-(defn- location-index [game id]
-  {:post [(integer? %)]}
-  (first (keep-indexed #(when (= id (:id %2)) %1) (locations game))))
+  ((locations game) :id))
 
 (defn- update-location [game id fun & args]
-  (apply update-in game [:board :arkham :locations (location-index game id)] fun args))
+  (apply update-in game [:board :arkham :locations id] fun args))
 
 (defn- update-locations [game fun location-ids]
   (reduce (fn [game' id]
@@ -35,21 +31,38 @@
 
 (defn- inc-clue-tokens [game location-ids]
   (update-locations game
-                    #(update-in % [:clue-tokens] (fn [i]
-                                                   (inc (or i 0))))
+                    #(update-in %
+                                [:clues]
+                                (fn [i]
+                                  (inc (or i 0))))
                     location-ids))
 
 (defn- place-clue-tokens [game]
   (inc-clue-tokens game
-                   (map :id (find-locations-by-flag game :clue))))
+                   (map first (find-locations-by-flag game :unstable))))
 
-(defn new-game [board-template]
+(defn- init-monsters [game]
+  (assoc game
+    :monsters
+    (vec (reduce (fn [acc [id n]]
+                   (concat acc
+                           (repeat n {:type id
+                                      :location nil})))
+                 []
+                 {:vampire 4}))))
+
+(defn new-game [templates]
   (-> {:players []
+       :monsters []
        :terror 0}
-      (assoc :board board-template)
-      (place-clue-tokens)))
+      (assoc :templates templates)
+      (assoc :board (:board templates))
+      (place-clue-tokens)
+      (init-monsters)))
 
-(defn foo [] (prn (new-game data/board)))
+(defn foo []
+  (data/init-game-data!)
+  (new-game @data/data))
 
 (def game {:players [{:id 1
                       :name "Foo"

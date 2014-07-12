@@ -1,0 +1,140 @@
+{:board {:arkham {:locations {:uptown
+                              {:name "Uptown"
+                               :flags [:street]
+                               :neighborhood 0}
+                              :woods
+                              {:name "Woods"
+                               :flags [:unstable]
+                               :neighborhood 0}
+                              :ye-olde-magick-shoppe
+                              {:name "Ye Olde Magick Shoppe"
+                               :neighborhood 0}
+                              :st-marys-hospital
+                              {:name "St. Mary's Hospital"
+                               :neighborhood 0}
+                              :soutside
+                              {:name "Southside"
+                               :flags [:street]
+                               :neighborhood 1}
+                              :historical-society
+                              {:name "Historical Society"
+                               :flags [:unstable]
+                               :neighborhood 1}
+                              :south-church
+                              {:name "South Church"
+                               :neighborhood 1}
+                              :mas-boarding-house
+                              {:name "Ma's Boarding House"
+                               :neighborhood 1}
+                              :french-hill
+                              {:name "French Hill"
+                               :flags [:street]
+                               :neighborhood 2}
+                              :silver-twilight-lodge
+                              {:name "Silver Twilight Lodge"
+                               :flags [:unstable]
+                               :neighborhood 2}
+                              :the-witch-house
+                              {:name "The Witch House"
+                               :flags [:unstable]
+                               :neighborhood 2}
+                              :miskatonic-university
+                              {:name "Miskatonic University"
+                               :flags [:street]
+                               :neighborhood 3}
+                              :library
+                              {:name "Library"
+                               :neighborhood 3}
+                              :administration
+                              {:name "Administration"
+                               :neighborhood 3}
+                              :science-building
+                              {:name "Science Building"
+                               :flags [:unstable]
+                               :neighborhood 3}
+                              :merchant-district
+                              {:name "Merchant District"
+                               :flags [:street]
+                               :neighborhood 4}
+                              :the-unnamable
+                              {:name "The Unnamable"
+                               :flags [:unstable]
+                               :neighborhood 4}
+                              :river-docks
+                              {:name "River Docks"
+                               :neighborhood 4}
+                              :unvisted-isle
+                              {:name "Unvisted Isle"
+                               :flags [:unstable]
+                               :neighborhood 4}
+                              :rivertown
+                              {:name "Rivertown"
+                               :flags [:street]
+                               :neighborhood 5}
+                              :general-store
+                              {:name "General Store"
+                               :neighborhood 5}
+                              :black-cave
+                              {:name "Black Cave"
+                               :flags [:unstable]
+                               :neighborhood 5}
+                              :graveyard
+                              {:name "Graveyard"
+                               :flags [:unstable]
+                               :neighborhood 5}
+                              :easttown
+                              {:name "Easttown"
+                               :flags [:street]
+                               :neighborhood 6}
+                              :police-station
+                              {:name "Police Station"
+                               :neighborhood 6}
+                              :velmas-diner
+                              {:name "Velma's Diner"
+                               :neighborhood 6}
+                              :hibbs-roadhouse
+                              {:name "Hibb's Roadhouse"
+                               :flags [:unstable]
+                               :neighborhood 6}
+                              :downtown
+                              {:name "Downtown"
+                               :flags [:street]
+                               :neighborhood 7}
+                              :independence-square
+                              {:name "Independence Square"
+                               :flags [:unstable]
+                               :neighborhood 7}
+                              :arkham-asylum
+                              {:name "Arkham Asylum"
+                               :neighborhood 7}
+                              :bank-of-arkham
+                              {:name "Bank of Arkham"
+                               :neighborhood 7}
+                              :northside
+                              {:name "Northside"
+                               :flags [:street]
+                               :neighborhood 8}
+                              :train-station
+                              {:name "Train Station"
+                               :neighborhood 8}
+                              :newspaper
+                              {:name "Newspaper"
+                               :neighborhood 8}
+                              :curiositie-shoppe
+                              {:name "Curiositie Shoppe"
+                               :neighborhood 8}}
+                  :connections [[:uptown :southside true]
+                                [:southside :french-hill true]
+                                [:miskatonic-university :uptown true]
+                                [:merchant-district :miskatonic-university true]
+                                [:french-hill :rivertown true]
+                                [:rivertown :easttown true]
+                                [:easttown :downtown true]
+                                [:downtown :northside true]
+                                [:northside :merchant-district true]
+                                [:miskatonic-university :french-hill false]
+                                [:merchant-district :rivertown false]
+                                [:downtown :merchant-district false]]}
+         :other-worlds {:another-dimension {:name "Another Dimension"
+                                            :colour [:red :blue :yellow :green]}}
+         :city-limits [:outskirts :the-sky :lost-in-time-and-space]}}

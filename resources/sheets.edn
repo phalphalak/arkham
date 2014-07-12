@@ -1,0 +1,20 @@
+{:sheets
+ {:amanda-sharpe {:name "Amanda Sharpe"
+                  :occupation "the Student"
+                  :max-sanity 5
+                  :max-stamina 5
+                  :home :bank-of-arkham
+                  :possessions {:fixed {:money 1
+                                        :clue 1}
+                                :random {:common-item 1
+                                         :unique-item 1
+                                         :spell 1
+                                         :skill 1}}
+                  :unique-ability "??? extra card on skill deck draw"
+                  :focus 3
+                  :skill-pairs {:speed 1
+                                :sneak 4
+                                :fight 1
+                                :will 4
+                                :lore 1
+                                :luck 4}}}}

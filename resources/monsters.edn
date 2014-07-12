@@ -1,0 +1,13 @@
+{:monsters
+ {:vampire {:name "Vampire"
+            :awareness -3
+            :movement-type :normal
+            :home-dimension "???"
+            :abilities [:undead
+                        :physical-resistance]
+            :description "???"
+            :horror-rating 0
+            :horror-damage 2
+            :toughness 2
+            :combat-damage 3
+            :combat-rating -3}}}
